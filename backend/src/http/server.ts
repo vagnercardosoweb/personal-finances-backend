@@ -1,15 +1,19 @@
 import '../config/module-alias';
+import { AddressInfo } from 'net';
 
-import express from 'express';
-import 'express-async-errors';
+import logger from '@src/config/logger';
+import app from '@src/http/app';
 
-import appRoutes from '@src/http/routes';
+(async () => {
+  try {
+    const server = await app.startServer();
+    const { port } = server.address() as AddressInfo;
 
-const app = express();
-const port = process.env.PORT || 3333;
+    logger.info(`🚀 Server started on port http://localhost:${port}`);
+  } catch (e) {
+    await app.closeServer();
 
-app.use(appRoutes);
-
-app.listen(port, () => {
-  console.log(`🚀 Server started on port http://localhost:${port}`);
-});
+    logger.error(`Server initialization failed: ${e.message}`);
+    process.exit(0);
+  }
+})();
