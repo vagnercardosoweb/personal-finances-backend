@@ -1,0 +1,11 @@
+/**/.env*
+/**/!.env.example
+/**/.idea
+/**/node_modules
+/**/dist
+/**/.DS_Store
+
+/**/.docker/mysql/data/*
+/**/!.docker/mysql/data/.gitkeep
+/**/.docker/redis/*
+/**/!.docker/redis/.gitkeep
