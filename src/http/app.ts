@@ -1,3 +1,4 @@
+import '../config/dotenv';
 import '../config/module-alias';
 
 import express from 'express';
