@@ -16,7 +16,11 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier", "eslint-plugin-import-helpers"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "eslint-plugin-import-helpers"
+  ],
   "rules": {
     "camelcase": "off",
     "global-require": "off",
@@ -41,6 +45,7 @@
         "js": "never"
       }
     ],
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-var-requires": "off",
@@ -55,7 +60,15 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", "/^@src/", ["parent", "sibling", "index"]],
+        "groups": [
+          "module",
+          "/^@src/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
         "alphabetize": {
           "order": "asc",
           "ignoreCase": true
@@ -64,9 +77,15 @@
     ]
   },
   "settings": {
-    "import/extensions": [".ts", ".js"],
+    "import/extensions": [
+      ".ts",
+      ".js"
+    ],
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".js"]
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".js"
+      ]
     },
     "import/resolver": {
       "typescript": {

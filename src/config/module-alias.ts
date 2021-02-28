@@ -1,6 +1,8 @@
 import { addAliases } from 'module-alias';
-import { resolve } from 'path';
+import { join, resolve } from 'path';
+
+const srcDir = join(__dirname, '..');
 
 addAliases({
-  '@src': resolve(__dirname, '..'),
+  '@src': resolve(srcDir),
 });
